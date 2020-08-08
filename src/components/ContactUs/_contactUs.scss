@@ -1,0 +1,47 @@
+.contactUs {
+  @include flexItem(center, space-evenly, column wrap);
+  position: relative;
+
+  &__row {
+    width: 100%;
+    @include flexItem(center, space-evenly, row wrap);
+    flex: 1;
+  }
+
+  &__box {
+    height: 300px;
+    width: 300px;
+    position: relative;
+    display: flex;
+
+    a {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-decoration: none;
+      color: $white;
+      font-size: 1.1rem;
+      text-align: center;
+      width: 70%;
+    }
+
+    svg {
+      height: 320px;
+    }
+  }
+
+  &__copy {
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.5;
+    align-self: center;
+    justify-self: center;
+  }
+
+  @media screen and(max-width:$mobile) {
+    &__copy {
+      padding: 2rem 0;
+    }
+  }
+}

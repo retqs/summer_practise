@@ -1,0 +1,20 @@
+$white: #fff;
+$black: #212121;
+
+$mobile: 480px;
+$tablet: 768px;
+
+$purple: #667eea;
+
+$bezier: cubic-bezier(0.77, 0, 0.18, 1);
+
+:root {
+  --whiteSpace: 20px;
+}
+
+@mixin flexItem($algn, $jst, $flow) {
+  display: flex;
+  align-items: $algn;
+  justify-content: $jst;
+  flex-flow: $flow;
+}

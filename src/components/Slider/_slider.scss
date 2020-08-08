@@ -1,0 +1,82 @@
+.slider {
+  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  margin: 5hv 0;
+
+  &__title {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+  }
+
+  &__text {
+    font-weight: 400;
+    text-align: center;
+    font-size: calc(1rem + 1.3vw);
+  }
+
+  &__slide {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    @include flexItem(center, center, row);
+  }
+
+  &__control {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    overflow: hidden;
+    border: none;
+    height: 70px;
+    width: 70px;
+    cursor: pointer;
+    border-radius: 50%;
+    outline: none;
+    box-shadow: 0 5px 35px #667eea;
+    transition: all 0.15s $bezier;
+
+    &:active {
+      transform: scale(0.8);
+    }
+
+    svg {
+      position: absolute;
+      transition: all 0.4s $bezier;
+      fill: $white;
+
+      &:nth-child(1) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+        left: -100%;
+      }
+    }
+
+    &:hover {
+      svg {
+        &:nth-child(1) {
+          left: 120%;
+        }
+      }
+
+      svg {
+        &:nth-child(2) {
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}

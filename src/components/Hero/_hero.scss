@@ -1,0 +1,47 @@
+.hero {
+  @include flexItem(center, center, row wrap);
+
+  .container {
+    min-height: 100vh;
+    width: 1272px;
+    @include flexItem(center, space-between, row wrap);
+
+    @media screen and(max-width:1272px) {
+      width: 90%;
+      margin: auto;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+  }
+
+  &__info {
+    max-width: 600px;
+  }
+
+  &__title {
+    font-size: calc(1em + 1vw);
+    font-weight: 400;
+    position: relative;
+  }
+
+  &__row {
+    overflow: hidden;
+
+    &:not(:first-child) {
+      margin-top: var(--whiteSpace);
+    }
+  }
+
+  &__image {
+    max-width: 320px;
+    img {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+    }
+
+    @media screen and(max-width:$mobile) {
+      max-width: 200px;
+    }
+  }
+}
